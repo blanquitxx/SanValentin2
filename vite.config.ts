@@ -3,6 +3,6 @@ import react from '@vitejs/plugin-react';
 
 export default defineConfig({
   plugins: [react()],
-  // 'base' debe ser './' para que funcione en cualquier subcarpeta de GitHub Pages
-  base: '/SanValentin3/',
+  // Ajustar 'base' para GitHub Pages: usa el nombre del repositorio
+  base: '/SanValentin2/',
 });
