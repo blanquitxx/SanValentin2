@@ -3,14 +3,23 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';
 
-const rootElement = document.getElementById('root');
-if (!rootElement) {
-  throw new Error("Could not find root element to mount to");
+function mountApp() {
+  const rootElement = document.getElementById('root');
+  if (!rootElement) {
+    return null;
+  }
+
+  const root = ReactDOM.createRoot(rootElement);
+  root.render(
+    <React.StrictMode>
+      <App />
+    </React.StrictMode>
+  );
+  return root;
 }
 
-const root = ReactDOM.createRoot(rootElement);
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-);
+if (document.readyState === 'loading') {
+  window.addEventListener('DOMContentLoaded', () => mountApp(), { once: true });
+} else {
+  mountApp();
+}
