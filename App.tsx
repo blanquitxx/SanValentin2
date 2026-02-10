@@ -23,7 +23,7 @@ const App: React.FC = () => {
   };
 
   const handleOpenEnvelope = () => {
-    if (!isStarted) handleStart();
+    // No iniciar la reproducción al abrir el sobre — solo al pulsar el botón
     setIsEnvelopeOpen(true);
   };
 
