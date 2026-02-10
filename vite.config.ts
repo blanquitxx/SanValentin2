@@ -3,6 +3,6 @@ import react from '@vitejs/plugin-react';
 
 export default defineConfig({
   plugins: [react()],
-  // Ajustar 'base' para GitHub Pages: usa el nombre del repositorio
-  base: '/SanValentin2/',
+  // Use relative base so built files load correctly on GitHub Pages
+  base: './',
 });
